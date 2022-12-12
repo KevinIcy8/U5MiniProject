@@ -25,8 +25,20 @@ public class Time {
     }
 
     public void add(Time timeAdded){
-        
-        System.out.println(timeAdded);
+        sec = this.sec + timeAdded.sec;
+        min = this.min + timeAdded.min;
+        hour = this.hour + timeAdded.hour;
+        if(sec>=60){
+            min++;
+            sec = sec-60;
+        }
+        if(min>=60){
+            hour++;
+            min = min-60;
+        }
+        if(hour>=24){
+            hour = hour-24;
+        }
     }
 
     public String toString(){
